@@ -1,5 +1,8 @@
 package com.driver;
 
+import java.util.Arrays;
+import java.util.HashMap;
+
 public class CurrentAccount extends BankAccount{
     String tradeLicenseId; //consists of Uppercase English characters only
 
@@ -31,7 +34,7 @@ public class CurrentAccount extends BankAccount{
         return false;
     }
     public boolean isAchiveable(String id){
-        HashMap<Character,Integer>map=new HashMap<>();
+        HashMap<Character,Integer> map=new HashMap<>();
         for(int i=0;i<id.length();i++){
                 map.put(id.charAt(i),map.getOrDefault(id.charAt(i),0)+1);
                 if(map.get(id.charAt(i))==2) return true;
@@ -43,7 +46,7 @@ public class CurrentAccount extends BankAccount{
         Arrays.sort(ch);
         String validId="";
         for(int i=0;i<ch.length;i++){
-            validId +=ch.charAt(i);
+            validId +=ch[i];
         }
         return validId;
     }
